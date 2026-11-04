@@ -16,5 +16,10 @@
     "highlight.js": "^11.11.1",
     "marked": "^16.4.1",
     "vite": "^8.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajmwagar/docs-kit.git"
+  },
+  "homepage": "https://github.com/ajmwagar/docs-kit"
 }
