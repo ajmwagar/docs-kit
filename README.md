@@ -60,12 +60,14 @@ import bundle from "virtual:docs-kit";
 
 mountDocs(bundle, {
   brand: { name: "My Product", mark: "M", badge: "Docs" },
-  repo: {
-    url: "https://github.com/me/my-product",
-    blobBase: "https://github.com/me/my-product/blob/main",
-    rawBase: "https://raw.githubusercontent.com/me/my-product/main",
-    showInPublic: true,
-  },
+  // Keep private repository URLs out of public builds.
+  repo: __DOCS_INTERNAL__
+    ? {
+        url: "https://github.com/me/my-product",
+        blobBase: "https://github.com/me/my-product/blob/main",
+        rawBase: "https://raw.githubusercontent.com/me/my-product/main",
+      }
+    : {},
   defaultSlug: "introduction",
   storageKey: "my-product-docs",
   audience: {

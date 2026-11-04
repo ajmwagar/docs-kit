@@ -25,6 +25,13 @@ export function docsKit(options = {}) {
 
   return {
     name: "docs-kit",
+    config() {
+      return {
+        define: {
+          __DOCS_INTERNAL__: JSON.stringify(audience === "internal"),
+        },
+      };
+    },
     resolveId(id) {
       return id === virtual ? resolved : null;
     },
